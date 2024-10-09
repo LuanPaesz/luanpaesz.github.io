@@ -4,10 +4,12 @@
 html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
 scroll-behavior: smooth; scroll-padding-top: 20px }
 body { line-height: 1.5; min-height: 100vh }
-@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
-@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
 img { width: 100%; height: auto; display: block }
 input, button, textarea, select { font: inherit }
+@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
+@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
+
+/* ============ CUSTOM PROPERTIES ============  */
 
 :root {
 
@@ -224,54 +226,78 @@ input, button, textarea, select { font: inherit }
     --trend-700: #2c4763;
     --trend-800: #1f364d;
     --trend-900: #0e2439;
-
 }
 
-/* ====== PADDING AROUND WEB PAGE BODY CONTENT ======  */
-/* Desktops */
-@media (min-width: 768px) {
-    body { padding: 4% 20% }
- }
- 
- /* Mobiles */
- @media (max-width: 767px) {
-    body { padding: 5% 5% }
- }
- body {
-    text-align: left;
+/* ================= ENDS ================ */
+
+/* Web page */
+body { 
     font-family: sans-serif;
 }
 
-body { background-color: lightblue; }
+/* HEADER */
+header { 
+    display: flex; flex-direction: column; justify-content: space-around;
+    align-items: center; padding: 20px 0; background-color: var(--green-300);
+    margin-left:auto; margin-right:auto; width: 100%;
+}
 
+@media (min-width: 1025px) { header { padding: 3% 22% 5% 22% } }
+@media (min-width: 768px) and (max-width: 1024px) { header { padding: 5% 20% } }
+@media (max-width: 767px) { header { padding: 32px 9% 32px 9% } }
+
+header *:last-child { margin-bottom: 0 !important }
+
+/* Main heading */
+h1 {
+	font-weight: bold;
+    font-size: 64px;
+    line-height: 1.1;    
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -2px
+}
+
+header p { 
+    font-size: 22px;
+    color: var(--green-900) ;
+    text-align: center;
+    font-weight:bold
+}
+
+img{
+    margin-bottom: 32px;
+    border-radius: 15px;
+}
+
+/* SECTIONS */
+section { background-color: var(--green-200) }
+
+/* Padding around content */
+@media (min-width: 1025px) { section { padding: 4% 24% } }
+@media (min-width: 768px) and (max-width: 1024px) { section { padding: 5% 20% } }
+@media (max-width: 767px) { section { padding: 32px 9% 32px 9% } }
+
+h1, h2, h2 { color: var(--green-700) }
+
+section *:last-child { margin-bottom: 0 !important }
+
+/* Small headings */
 h2 {
-    font-size: 56px;
-    margin-bottom: 4px;
-    color: blue;
-}
-
-h3 {
-    font-size: 32px;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 1.2;    
+    margin-top: 42px;
     margin-bottom: 4px;
 }
 
+section h2:nth-child(1) { margin-top: 0 }
+
+/* Text paragraphs */
 p {
     font-size: 20px;
-    margin-bottom: 16px
-    
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
-
-
-
-a {color:blue}
-
-.section-1{ background-color: lemonchiffon;}
-.section-2{ background-color: lightgreen}
-.section-3{ background-color: lightblue}
-.section-4{ background-color: lightblue}
-.section-4 h2, .section-4 p { background-color: white}
-.section-5{ background-color: darkblue}
-
-.section-4 h2,
-.section-4 p {color: branco;}
 

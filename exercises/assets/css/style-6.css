@@ -4,13 +4,14 @@
 html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
 scroll-behavior: smooth; scroll-padding-top: 20px }
 body { line-height: 1.5; min-height: 100vh }
-@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
-@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
 img { width: 100%; height: auto; display: block }
 input, button, textarea, select { font: inherit }
+@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
+@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
+
+/* ============ CUSTOM PROPERTIES ============  */
 
 :root {
-
     /* Color variables */
     --black-000: #000000;
     --white-000: #ffffff;
@@ -227,51 +228,113 @@ input, button, textarea, select { font: inherit }
 
 }
 
-/* ====== PADDING AROUND WEB PAGE BODY CONTENT ======  */
-/* Desktops */
-@media (min-width: 768px) {
-    body { padding: 4% 20% }
- }
- 
- /* Mobiles */
- @media (max-width: 767px) {
-    body { padding: 5% 5% }
- }
- body {
-    text-align: left;
+/* ================= ENDS ================ */
+
+/* Web page */
+body { 
     font-family: sans-serif;
 }
 
-body { background-color: lightblue; }
+/* HEADER */
+header { 
+    display: flex; flex-direction: column; justify-content: space-around;
+    align-items: center; padding: 20px 0;
+    margin-left:auto; margin-right:auto; width: 100%;
+    background-color: #fff;
+}
 
+@media (min-width: 1025px) { header { padding: 3% 22% 5% 22% } }
+@media (min-width: 768px) and (max-width: 1024px) { header { padding: 5% 20% } }
+@media (max-width: 767px) { header { padding: 32px 9% 32px 9% } }
+
+header *:last-child { margin-bottom: 0 !important }
+
+body { font-family: sans-serif;}
+
+/* Main heading */
+h1 {
+	font-weight: bold;
+    font-size: 84px;
+    color: var(--rose-800);
+    text-align: center;
+    line-height: 1.2;    
+    margin-bottom: 30px;
+}
+
+/* Small headings */
 h2 {
-    font-size: 56px;
-    margin-bottom: 4px;
-    color: blue;
-}
-
-h3 {
+    font-weight: bold;
     font-size: 32px;
-    margin-bottom: 4px;
+    color: var(--purple-700);
+    text-align: center;
+    line-height: 1.3;    
+    margin-bottom: 42px;
 }
 
+
+/* SECTIONS */
+section { background-color: var(--green-200) }
+
+/* Padding around content */
+@media (min-width: 1025px) { section { padding: 4% 24% } }
+@media (min-width: 768px) and (max-width: 1024px) { section { padding: 5% 20% } }
+@media (max-width: 767px) { section { padding: 32px 9% 32px 9% } }
+
+section *:last-child { margin-bottom: 0 !important }
+
+.watermelon {
+    background-color: var(--pink-200);
+    text-align: center;
+}
+
+.watermelon h3 {
+    color: var(--pink-800);
+    margin-bottom: 12px;
+}
+.apple {
+    background-color: var(--green-200);
+    text-align: center;
+}
+
+.apple h3 {
+    color: var(--green-800);
+}
+
+.blueberry {
+    background-color: var(--purple-700);
+    text-align: center;
+}
+
+.blueberry h3, .blueberry p {
+    color: var(--purple-100);
+}
+
+.lemon {
+    background-color: var(--yellow-200);
+    text-align: center;
+}
+
+.lemon h3 {
+    color: var(--yellow-700);
+}
+
+/* Smaller headings */
+h3 {
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    line-height: 1.3; 
+    letter-spacing:2px;
+    margin-bottom: 2px;
+}
+
+/* Text paragraphs */
 p {
-    font-size: 20px;
-    margin-bottom: 16px
-    
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.6;
+    margin-top:0;
+    margin-bottom: 32px;
+    color: var(--gray-800);
 }
-
-
-
-a {color:blue}
-
-.section-1{ background-color: lemonchiffon;}
-.section-2{ background-color: lightgreen}
-.section-3{ background-color: lightblue}
-.section-4{ background-color: lightblue}
-.section-4 h2, .section-4 p { background-color: white}
-.section-5{ background-color: darkblue}
-
-.section-4 h2,
-.section-4 p {color: branco;}
 
