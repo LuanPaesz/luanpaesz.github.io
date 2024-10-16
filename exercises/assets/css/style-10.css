@@ -9,7 +9,26 @@ body { line-height: 1.5; min-height: 100vh }
 img { width: 100%; height: auto; display: block }
 input, button, textarea, select { font: inherit }
 
+
+/* ============ CUSTOM PROPERTIES ============  */
+
 :root {
+
+ /* Alternatives to default sans-serif font */
+ --font-sans: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+
+ /* Alternatives to default serif font */
+ --font-serif: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+
+ /* Alternatives to default monospace font */
+ --font-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+ --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+ --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+ --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+ --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+ --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+ --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+ --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
 
     /* Color variables */
     --black-000: #000000;
@@ -225,53 +244,121 @@ input, button, textarea, select { font: inherit }
     --trend-800: #1f364d;
     --trend-900: #0e2439;
 
+
 }
 
-/* ====== PADDING AROUND WEB PAGE BODY CONTENT ======  */
-/* Desktops */
+/* Global font */
+body { font-family: var(--font-sans) }
+
+
+/*  ====================== SECTIONS ======================== */
+
+/* Padding around content: desktops / laptops */
+@media (min-width: 1025px) { section { padding: 60px 4% } }
+/* Padding around content: tablets */
+@media (min-width: 768px) and (max-width: 1024px) { section { padding: 50px 6% } }
+/* Padding around content: mobiles */
+@media (max-width: 767px) { section { padding: 42px 9% 42px 9% } }
+
+/* Under last content item, zero the bottom margin */
+section > *:last-child { margin-bottom: 0 !important }
+
+/* When content width < large viewport width, equalise spacing at left and right */
+section > * { max-width: 1600px; margin-left: auto; margin-right: auto }
+
+/* Max content widths: classes for narrow content */
+section.w-820px >  * { max-width: 820px }
+section.w-1024px > * { max-width: 1024px }
+section.w-1140px > * { max-width: 1140px }
+section.w-1356px > * { max-width: 1356px }
+
+
+/* ============= SINGLE COLUMN LAYOUT ============ */
+
+/* Typography */
+section h2, section h3 { line-height: 1.2 }
+section h2 {
+    font-weight: 700;
+	letter-spacing: -1px;
+}
+
 @media (min-width: 768px) {
-    body { padding: 4% 20% }
+    section h2 { margin-bottom: 32px }
+}
+
+@media (max-width: 768px) {
+    section h2 { margin-bottom: 18px }
+}
+
+section h2 span { color: var(--gray-600); }
+
+@media (min-width: 768px) { section h3 { margin-top: 48px; margin-bottom: 4px } }
+@media (max-width: 768px) { section h3 { margin-top: 32px; margin-bottom: 2px } }
+
+section p {
+    line-height: 1.7;
+	margin-bottom: 1em;
+}
+
+/* Badges */
+section .badge span {
+	display: inline-block;
+	padding: 2px 10px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+@media (min-width: 768px) { section .badge { margin-bottom: 42px } }
+@media (max-width: 767px) { section .badge { margin-bottom: 24px } }
+
+/* Horizontal alignment */
+.text-center { text-align: center; margin-left: auto; margin-right: auto }
+
+/* Responsivefont sizes */
+section div span { font-size: var(--fs-base) }
+
+section h2 { font-size: var(--fs-xl) }
+
+section h3 { font-size: var(--fs-lg) }
+
+section p {font-size: var(--fs-md) }
+
+.section-selector-1 { background-color: #000 }
+.section-selector-1 .badge span { 
+    background-color: #fff; color: #000;
+    font-size: var(--fs-sm);
+}
+
+.section-selector-1 h2, .section-selector-1 p { color: #fff }
+.section-selector-1 h2 { letter-spacing: 1px }
+.section-selector-1 h2 span { color: var(--amber-400) }
+
+.section-selector-2 {
+    background-image: linear-gradient(90deg, var(--sky-100), var(--sky-300))
  }
- 
- /* Mobiles */
- @media (max-width: 767px) {
-    section { padding: 5% 5% }
- }
- section {
-    text-align: left;
-    font-family: sans-serif;
+ .section-selector-2 h2 { letter-spacing: 1px }
+ .section-selector-2 h2 span { color: var(--red-600) }
+
+ .section-selector-3 { background-color: var(--yellow-300) }
+ .section-selector-3 h2 { font-weight: 400 }
+ .section-selector-3 h2 span { font-weight: 700; color: #000 }
+
+ .section-selector-4 { background-color: var(--trend-800) }
+.section-selector-4 .badge span {
+    background-color: transparent;
+    color: var(--sky-400);
+    font-size: var(--fs-xxl);
 }
+.section-selector-4 h2 { color: #fff }
+.section-selector-4 p { color: var(--gray-200) }
 
-body { background-color: lightblue; }
+section-selector-5 { background-color: var(--trend-050) }
+.section-selector-5 p { color: var(--gray-700) }
 
-h2 {
-    font-size: 56px;
-    margin-bottom: 4px;
-    color: blue;
+.section-selector-6 { background-color: var(--purple-200) }
+.section-selector-6 h2 {
+    letter-spacing: 3px;
+    color: var(--blue-800);
+    font-size: var(--fs-xxxl)
 }
-
-h3 {
-    font-size: 32px;
-    margin-bottom: 4px;
-}
-
-p {
-    font-size: 20px;
-    margin-bottom: 16px
-    
-}
-
-
-
-a {color:blue}
-
-.section-1{ background-color: lemonchiffon;}
-.section-2{ background-color: lightgreen}
-.section-3{ background-color: lightblue}
-.section-4{ background-color: lightblue}
-.section-4 h2, .section-4 p { background-color: white}
-.section-5{ background-color: darkblue}
-
-.section-4 h2,
-.section-4 p {color: branco;}
-
+.section-selector-6 h2 span { color: var(--red-600) }

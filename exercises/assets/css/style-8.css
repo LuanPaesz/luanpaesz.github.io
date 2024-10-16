@@ -4,12 +4,19 @@
 html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
 scroll-behavior: smooth; scroll-padding-top: 20px }
 body { line-height: 1.5; min-height: 100vh }
-@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
-@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
 img { width: 100%; height: auto; display: block }
 input, button, textarea, select { font: inherit }
+@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
+@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
+
+/* ============ CUSTOM PROPERTIES ============  */
+
+/* Div selector with properties and values */
+
+
 
 :root {
+ 
 
     /* Color variables */
     --black-000: #000000;
@@ -224,54 +231,65 @@ input, button, textarea, select { font: inherit }
     --trend-700: #2c4763;
     --trend-800: #1f364d;
     --trend-900: #0e2439;
-
 }
 
-/* ====== PADDING AROUND WEB PAGE BODY CONTENT ======  */
-/* Desktops */
-@media (min-width: 768px) {
-    body { padding: 4% 20% }
- }
- 
- /* Mobiles */
- @media (max-width: 767px) {
-    section { padding: 5% 5% }
- }
- section {
-    text-align: left;
-    font-family: sans-serif;
-}
+/* ================= ENDS ================ */
 
-body { background-color: lightblue; }
 
-h2 {
-    font-size: 56px;
-    margin-bottom: 4px;
-    color: blue;
+/* SECTIONS */
+
+/* Padding around content */
+@media (min-width: 1025px) { section { padding: 4% 14% } }
+@media (min-width: 768px) and (max-width: 1024px) { section { padding: 5% 12% } }
+@media (max-width: 767px) { section { padding: 32px 9% 32px 9% } }
+
+/* ==== Headings ==== */
+
+h1 {
+	font-family: sans-serif;
+	font-size: 64px;
+    text-align: center;
+    letter-spacing: -1px;
+    margin-bottom: 64px;
 }
 
 h3 {
-    font-size: 32px;
-    margin-bottom: 4px;
+	font-family: sans-serif;
+	font-size: 28px;
+    margin-bottom: 2px;
 }
 
+/* Paragraphs of text */
 p {
+	font-family: sans-serif;
     font-size: 20px;
-    margin-bottom: 16px
-    
+    color: #696969;
+    line-height: 1.7
+}
+div {
+    padding: 12px;
+    margin-bottom: 40px;
+    width: 25%    
+}
+.bono {
+    background-color: #4081ec; 
+}
+.edge {
+    background-color: #ffbb33;
+}
+.adam {
+    background-color: #f73345;
+}
+.larry {
+    background-color: #e0e0e0;
 }
 
+.bono h3,
+.bono p,
+.adam h3,
+.adam p { color: #fff }
 
-
-a {color:blue}
-
-.section-1{ background-color: lemonchiffon;}
-.section-2{ background-color: lightgreen}
-.section-3{ background-color: lightblue}
-.section-4{ background-color: lightblue}
-.section-4 h2, .section-4 p { background-color: white}
-.section-5{ background-color: darkblue}
-
-.section-4 h2,
-.section-4 p {color: branco;}
-
+.edge h3,
+.edge p,
+.larry h3,
+.larry p { color: #000 }
