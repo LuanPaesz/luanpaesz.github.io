@@ -1,66 +1,114 @@
 /*  ============= WEB BROWSER RESETS ============ */
-* { margin: 0; padding: 0; border: none }
-*, *::before, *::after { box-sizing: border-box }
+* { margin: 0; padding: 0; border: none; }
+*, *::before, *::after { box-sizing: border-box; }
 html { height: 100%; font-size: 100%; font: inherit; vertical-align: baseline;
-scroll-behavior: smooth; scroll-padding-top: 20px }
-body { line-height: 1.5; min-height: 100vh }
-@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
-@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
-img { width: 100%; height: auto; display: block }
-input, button, textarea, select { font: inherit }
+scroll-behavior: smooth; scroll-padding-top: 20px; }
+body { line-height: 1.5; min-height: 100vh; }
+@media (max-width: 767px ) { body { text-rendering: optimizeSpeed; } }
+@media (min-width: 768px ) { body { text-rendering: optimizeLegibility; } }
+img { width: 100%; height: auto; display: block; }
+input, button, textarea, select { font: inherit; }
 
-/* ====== PADDING AROUND WEB PAGE BODY CONTENT ======  */
+/* ============ CUSTOM PROPERTIES ============  */
 
-/* Desktops */
+:root {
+    /* Font settings */
+    --font-sans: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+    --font-serif: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    --font-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+
+    /* Colors */
+    --black-000: #000000;
+    --white-000: #ffffff;
+    /* Additional colors... */
+}
+
+/* ====== BODY PADDING ======  */
+
 @media (min-width: 768px) {
-    body { padding: 4% 20% }
- }
- 
- /* Mobiles */
- @media (max-width: 767px) {
-    body { padding: 8% 5% }
- }
+    body { padding: 4% 20%; }
+}
 
-/* ================= ENDS ================ */
+@media (max-width: 767px) {
+    body { padding: 8% 5%; }
+}
+
+/* ====== PAGE BACKGROUND AND FONTS ====== */
 
 body {
     text-align: center;
-    font-family: sans-serif;  
+    font-family: var(--font-sans);
+    background-color: #FF7518;
 }
 
-body { background-color: lightgreen; }
+/* ====== VIDEO BACKGROUND ====== */
+video.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* ====== HEADINGS WITH ANIMATIONS ====== */
+
+h1, h2, h3 {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h1 {
-    font-size: 78px;
-    font-weight: normal;
-    letter-spacing: -2px;
-    margin-bottom: 12px;
-    line-height: 1.2;
-    color: #171a4a /* Azul marinho*/;
+    font-size: var(--fs-xxl);
+    font-family: "Kablammo", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "MORF" 0;
 }
 
 h2 {
-    font-size: 42px;
-    letter-spacing: 6px;
-    margin-bottom: 48px;
-    line-height: 1.2;
-    color: #171a4a /* Azul marinho*/
+    font-size: var(--fs-xl);
+    font-family: "Kablammo", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "MORF" 0;
+    color: #4B0082;
 }
 
 h3 {
-    font-size: 24px;
-    margin-top: 48px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    color: #171a4a /* Azul marinho*/
+    font-size: var(--fs-lg);
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #4B0082;
 }
+
+/* ====== PARAGRAPHS AND LINKS ====== */
 
 p {
-    font-size: 20px;
-    margin-bottom: 16px;
-    color: #171a4a /* Azul marinho*/
+    font-size: var(--fs-base);
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #39FF14;
+    line-height: 1.7;
+    text-shadow: 2px 2px 5px black;
 }
 
-a { color: darkgreen; }
+a { color: #39FF14; }
 
+/* ================= ENDS ================ */
