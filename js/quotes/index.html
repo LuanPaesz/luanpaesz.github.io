@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Bloggs | Front-end Developer | JavaScript Random Quotes Generator Project</title>
+    <title>Luan Paes | Front-end Developer | JavaScript Random Quotes Generator Project</title>
     <meta name="description" content="Uses the Fetch API to retrieve a randomly-choosen selection of ten inspiring quotations.">
 
 	<!-- Stylesheets -->
@@ -105,7 +105,7 @@
     <!-- navigation menu -->
 
     <nav class="container-menu menu-desktop menu-sticky">
-        <a href="../../../index.html"><img src="../assets/img/website-logo-sample.png" alt="website logo"></a>
+        <a href="../../../index.html"><img src="../assets/img/logoluan-removebg-preview.png" alt="website logo"></a>
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
@@ -148,6 +148,56 @@
 
     <script>
 
+        // Add a click event listener to the button with the ID "btn-quotes". 
+        // When the button is clicked, the function fetchRandomNumQuotes will be executed.
+        document.getElementById("btn-quotes").addEventListener("click", fetchRandomNumQuotes);
+	
+    // Asynchronous function to fetch random quotes and display them on the page.
+    async function fetchRandomNumQuotes() {
+        try {
+            // Await the response from the fetch request to the quotes API.
+            const response = await fetch('https://type.fit/api/quotes');
+        
+            // Check if the fetch request was not successful (status code not 200).
+            if (response.status !== 200) {
+                // Log the error status code to the console and exit the function early.
+                console.log('Error Status Code: ' + response.status);
+                return;
+            }
+        
+            // Await and parse the JSON response from the fetch request.
+            const data = await response.json();
+        
+            // Logging the raw data and its length for debugging or inspection purposes.
+            console.log(data);
+            console.log(data.length);
+        
+            // Initialize an empty string to accumulate HTML content.
+            let html_block = "";
+        
+            // Loop through the first 15 items of the data array.
+            for (let i = 0; i < 15; i++) {
+                // Check if the current quote's author is not specified and set it to "Anonymous" if true.
+                if (!data[i].author) {
+                    data[i].author = "Anonymous";
+                }
+        
+                // Remove ", type.fit" from the author's name if present.
+                data[i].author = data[i].author.replace(", type.fit", "");
+         
+                // Append a formatted string containing the quote text and author to the HTML block.
+                // This uses template literals to insert variables directly into the string.
+                html_block += `<div class="col-3"><p><span>“</span>${data[i].text}<span>”</span></p><h3>${data[i].author}</h3></div>`;
+            }
+        
+            // Insert the accumulated HTML content into the element with the ID "quotes-box".
+            document.getElementById("quotes-box").innerHTML = html_block;
+            } catch (error) {
+               // Log any errors that occur during the fetch operation.
+               console.log('Error fetching quotes:', error);
+            }
+        }
+
 
     </script>
 
@@ -155,7 +205,7 @@
     <!-- footer -->
 	<footer>
 
-		<h2>Joe Bloggs</h2>
+		<h2>Luan Paes</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -166,8 +216,8 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
+			<li><a href="www.linkedin.com/in/luanpaesz" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/LuanPaesz" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 
 		<p class="index.html"> <a href="../../../privacy.html" style="color: #fff; background-color:transparent;">Privacy &amp; Legal</a> </p>
