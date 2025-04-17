@@ -72,7 +72,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: var(--fs-xxl);
-    font-family: "Kablammo", system-ui;
+    font-family: ;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -83,7 +83,7 @@ h1 {
 
 h2 {
     font-size: var(--fs-xl);
-    font-family: "Kablammo", system-ui;
+    font-family: ;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -94,7 +94,7 @@ h2 {
 
 h3 {
     font-size: var(--fs-lg);
-    font-family: "Rubik Wet Paint", system-ui;
+    font-family: ;
     font-weight: 400;
     font-style: normal;
     color: #4B0082;
@@ -105,7 +105,7 @@ h3 {
 
 p {
     font-size: var(--fs-base);
-    font-family: "Rubik Wet Paint", system-ui;
+    font-family: ;
     font-weight: 400;
     font-style: normal;
     color: #bbb;

@@ -1,0 +1,34 @@
+
+nav.theme-dark, nav.theme-dark ul.links-wrapper.active {
+    background-color: #FFD700; /* Dourado para o menu */
+  }
+  
+  nav.theme-dark ul.links-wrapper.active a {
+    color: #2C3E50; /* Contraste com o dourado */
+  }
+  
+  header.theme-dark {
+    background-color: #2C3E50; /* Azul escuro */
+  }
+  
+  header.theme-dark h1 {
+    color: #F7D774; /* Amarelo suave */
+  }
+  
+  section.theme-dark {
+    background-color: #34495E; /* Azul intermediário */
+  }
+  
+  footer.theme-dark {
+    background-color: #2C3E50; /* Azul escuro */
+  }
+  
+  footer.theme-dark a {
+    color: #FFD700; /* Links dourados no rodapé */
+  }
+  
+  header .col-text h2, .col-1 > h3 {
+    color: #ECF0F1; /* Cinza claro */
+    line-height: 1.8;
+  }
+  
